@@ -1,4 +1,4 @@
-FROM jenkins/slave
+FROM jenkins/ssh-slave
 
 MAINTAINER acefei
 
@@ -14,6 +14,3 @@ RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 
 # drop back to the regular jenkins user - good practice
 USER jenkins
-
-VOLUME /var/jenkins_home/worker
-WORKDIR /var/jenkins_home/worker
